@@ -183,3 +183,76 @@ body.dark button:hover {
   background: #4fc3f7;
   color: #000;
 }
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+   .game-area {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .board {
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 70px);
+    gap: 8px;
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    line-height: 70px;
+  }
+
+  .scoreboard select {
+  width: auto;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  max-width: 120px;
+  background-color: #fff;
+}
+
+body.dark .scoreboard select {
+  background-color: #2d2d2d;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+
+  .scoreboard p {
+    font-size: 0.95rem;
+  }
+
+  button,
+  #clearScore {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  #darkToggleLabel {
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  .scoreboard select {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
