@@ -1,0 +1,185 @@
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0288d1, #4fc3f7);
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+}
+
+#darkToggleLabel {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
+
+#darkToggleLabel input {
+  transform: scale(1.2);
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+/* Sidebar / Score Section */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scoreboard p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.scoreboard select,
+.scoreboard input[type="checkbox"] {
+  margin-left: 8px;
+}
+
+#clearScore {
+  background: #ffcccc;
+  border: 2px solid red;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#clearScore:hover {
+  background: red;
+  color: white;
+}
+
+/* Game Area */
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 10px;
+}
+
+.cell {
+  width: 90px;
+  height: 90px;
+  font-size: 2.2rem;
+  background: #b3e5fc;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 90px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #0288d1;
+  background: white;
+  color: #0288d1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0288d1;
+  color: white;
+}
+
+/* Winning Cell */
+.winning-cell {
+  background: #73d1f6 !important;
+  font-weight: bold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #70dff8; }
+  to { box-shadow: 0 0 20px #37eaf7; }
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(to bottom, #0d1117, #1f2937);
+  color: #fff;
+}
+
+body.dark header h1 {
+  color: #fff;
+}
+
+body.dark .cell {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+body.dark .scoreboard p {
+  color: #ddd;
+}
+
+body.dark #clearScore {
+  background: #ff9999;
+  border-color: #ff4d4d;
+  color: #fff;
+}
+
+body.dark button {
+  background: #2d2d2d;
+  color: #fff;
+  border-color: #4fc3f7;
+}
+
+body.dark button:hover {
+  background: #4fc3f7;
+  color: #000;
+}
